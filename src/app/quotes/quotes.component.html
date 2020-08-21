@@ -1,8 +1,10 @@
 <p>quotes works!</p>
 <button>Add Quote</button>
-<div *ngFor='let quote of quotes'>
+<div *ngFor='let quote of quotes;let i=index' >
   {{quote.quote}}<br>
-  <p>Quote by:{{quote.name}}</p>
-  <p>Submitted on: {{quote.submitDate|date}} {{quote.completeDate|dateCount}} days ago</p>
+  <button (click)="toggleDetails(i)">Toggle</button>
+  <p  *ngIf='quote.showDetails'>Quote by:{{quote.name}}</p>
+  <p  *ngIf='quote.showDetails'>Submitted on: {{quote.submitDate|date}} {{quote.completeDate|dateCount}} days ago</p>
+  <button (click)="deleteQuote(i)" *ngIf='quote.showDetails'>Delete Quote</button>
+  
 </div>
-<button>Toggle</button>
