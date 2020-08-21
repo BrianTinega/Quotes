@@ -1,2 +1,8 @@
 <p>quotes works!</p>
 <button>Add Quote</button>
+<div *ngFor='let quote of quotes'>
+  {{quote.quote}}<br>
+  <p>Quote by:{{quote.name}}</p>
+  <p>Submitted on: {{quote.submitDate|date}} {{quote.completeDate|dateCount}} days ago</p>
+</div>
+<button>Toggle</button>
