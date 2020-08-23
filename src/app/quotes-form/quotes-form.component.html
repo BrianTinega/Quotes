@@ -1,9 +1,9 @@
-
+<link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap" rel="stylesheet">
 <div class="container-fluid">
   <div class="noChange">
+    <h2>Create Quote</h2>
     <form (ngSubmit)='submitQuote()' #quotesForm ='ngForm'>
       <div class="form-group">
-    
           <label for="name">Name</label>
           <input type="text" required class="form-control" id="name"  [(ngModel)]="newQuote.name" name="name" #name='ngModel'>
           <div [hidden]="name.valid || name.pristine" class="alert alert-danger"></div>

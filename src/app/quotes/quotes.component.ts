@@ -9,7 +9,7 @@ import {Quotes} from '../quotes';
 })
 export class QuotesComponent implements OnInit {
   quotes:Quotes[]= [
-   new Quotes ('Brian','Carpe Diem',0,0, new Date (7,20,2020)),
+   new Quotes ('Brian','Carpe Diem',0,0, new Date (2020,7,20)),
   ]
   
   toggleDetails(index){

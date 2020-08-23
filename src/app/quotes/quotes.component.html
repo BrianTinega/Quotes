@@ -1,4 +1,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@1,700&display=swap" rel="stylesheet">
+
 <div class="container">
   <div class="jumbotron">
     <h1>Quotes</h1>
@@ -9,19 +10,21 @@
   <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h2>Create Quote</h2>
+     
       <div *ngFor='let quote of quotes;let i=index' >
-        <p>{{quote.quote}}</p><br>
-        <button (click)="toggleDetails(i)">Toggle</button>
+        <p id="quote">"{{quote.quote}}"</p><br>
+        <button (click)="toggleDetails(i)" class="btn btn-warning">Toggle</button>
         <p  *ngIf='quote.showDetails'>Quote by:{{quote.name}}</p>
         <p  *ngIf='quote.showDetails'>Submitted on: {{quote.submitDate|date}} and {{quote.submitDate|dateCount}} days ago</p>
       
-        <button (click)="deleteQuote(i)" *ngIf='quote.showDetails'>Delete Quote</button> <br>
+        <button (click)="deleteQuote(i)" *ngIf='quote.showDetails' class="btn btn-danger">Delete Quote</button> <br>
       </div>
     </div>
     <div class="col-md-6" *ngFor='let quote of quotes; let i="index"'>
-      <button  *ngIf='quote.showDetails' (click)="upvote(i)"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9yCjvVQqHsKJ4B9g8ruGaYImyB2Eq1A6WQg&usqp=CAU"> <p>Like:{{quote.like}}</p></button>
-      <button   *ngIf='quote.showDetails' (click)="downvote(i)"><img src="https://image.shutterstock.com/image-vector/thumbs-down-dislike-hate-social-260nw-692971825.jpg"><p>Dislike: {{quote.dislike}}</p></button> 
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9yCjvVQqHsKJ4B9g8ruGaYImyB2Eq1A6WQg&usqp=CAU" *ngIf='quote.showDetails' (click)="upvote(i)"> 
+      <p>Like:{{quote.like}}</p>
+      <img src="https://image.shutterstock.com/image-vector/thumbs-down-dislike-hate-social-260nw-692971825.jpg" *ngIf='quote.showDetails' (click)="downvote(i)">
+      <p>Dislike: {{quote.dislike}}</p>
     </div>
     
   </div>  

@@ -1,14 +1,25 @@
 img {
-  height: 1cm;
-  width: 1cm;
+  height: 1.5cm;
+  width: 2cm;
 }
 .jumbotron {
- background-color: navy;
+ background-color:rgb(17, 17, 20);
+ height: 4cm;
 }
 h1{
   color: azure;
   text-align: center;
 }
-p{
+p {
+  font-family: 'Volkhov', serif;
+}
+#quotes {
+  font-family: 'Volkhov', serif;
+  font-size: 50px;
+}
+h2 {
+  font-family: 'Volkhov', serif;
+}
+h1{
   font-family: 'Volkhov', serif;
 }
