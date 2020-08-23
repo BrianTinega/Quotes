@@ -1,10 +1,35 @@
-<p>quotes works!</p>
-<button>Add Quote</button>
-<div *ngFor='let quote of quotes;let i=index' >
-  {{quote.quote}}<br>
-  <button (click)="toggleDetails(i)">Toggle</button>
-  <p  *ngIf='quote.showDetails'>Quote by:{{quote.name}}</p>
-  <p  *ngIf='quote.showDetails'>Submitted on: {{quote.submitDate|date}} {{quote.completeDate|dateCount}} days ago</p>
-  <button (click)="deleteQuote(i)" *ngIf='quote.showDetails'>Delete Quote</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      
+      <div *ngFor='let quote of quotes;let i=index' >
+        {{quote.quote}}<br>
+        <button (click)="toggleDetails(i)">Toggle</button>
+        <p  *ngIf='quote.showDetails'>Quote by:{{quote.name}}</p>
+        <p  *ngIf='quote.showDetails'>Submitted on: {{quote.submitDate|date}} and {{quote.submitDate|dateCount}} days ago</p>
+      
+        <button (click)="deleteQuote(i)" *ngIf='quote.showDetails'>Delete Quote</button> <br>
+      </div>
+    </div>
+    <div class="col-md-6" *ngFor='let quote of quotes; let i="index"'>
+      <button  *ngIf='quote.showDetails' (click)="upvote(i)"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9yCjvVQqHsKJ4B9g8ruGaYImyB2Eq1A6WQg&usqp=CAU"> <p>Like:{{quote.like}}</p></button>
+      <button   *ngIf='quote.showDetails' (click)="downvote(i)"><img src="https://image.shutterstock.com/image-vector/thumbs-down-dislike-hate-social-260nw-692971825.jpg"><p>Dislike: {{quote.dislike}}</p></button> 
+    </div>
+    
+  </div>  
+    <div class="row">
+      <div class="col-md-12">
+        <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
+      </div>
+     
+       
+    </div>
+    
+</div>   
   
-</div>
+  
+
+
+  
+          
+      

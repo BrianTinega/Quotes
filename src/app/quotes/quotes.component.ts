@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Quotes} from '../quotes';
 
+
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -8,8 +9,9 @@ import {Quotes} from '../quotes';
 })
 export class QuotesComponent implements OnInit {
   quotes:Quotes[]= [
-   new Quotes ('Brian','Crape Diem',new Date (2020,8.20)),
+   new Quotes ('Brian','Carpe Diem',new Date (2020,8,20),0,0),
   ]
+  
   toggleDetails(index){
     this.quotes[index].showDetails = !this.quotes[index].showDetails;
   }
@@ -18,6 +20,17 @@ export class QuotesComponent implements OnInit {
    if (toDelete) {
     this.quotes.splice(index,1);
    }
+  
+  }
+  upvote(index){
+    this.quotes[index].like++
+  }
+  downvote(index){
+    this.quotes[index].dislike++
+  }
+  addNewQuote(quote:any){
+    this.quotes.push(quote)
+    
   }
   
   constructor() { }

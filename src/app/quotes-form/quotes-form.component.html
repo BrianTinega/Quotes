@@ -1,0 +1,34 @@
+
+<div class="container-fluid">
+  <div class="noChange">
+    <form (ngSubmit)='submitQuote()' #quotesForm ='ngForm'>
+      <div class="form-group">
+    
+          <label for="name">Name</label>
+          <input type="text" required class="form-control" id="name"  [(ngModel)]="newQuote.name" name="name" #name='ngModel'>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger"></div>
+      </div>
+      
+        <div class="form-group">
+    
+          <label for="quote">Quote</label>
+          <input type="text" required class="form-control" id="quote"  [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel'>
+          <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger"></div>
+         
+    
+      </div>
+      <div class="form-group">
+          <label for="submitDate">Date</label>
+          <input type='date' id="submitDate" [(ngModel)]="newQuote.submitDate" name="submitDate" #submitDate='ngModel'required><br>
+          <div [hidden]="submitDate.valid || submitDate.pristine" class="alert alert-danger"></div>
+      
+      </div>
+     
+      <button type="submit" class="btn btn-success" >Add Quote</button>
+    </form>
+
+  </div>
+ 
+</div>
+
+
