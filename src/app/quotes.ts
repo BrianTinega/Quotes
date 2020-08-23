@@ -1,11 +1,13 @@
 export class Quotes {
+  highlightQuotes:boolean;
   showDetails:boolean
   constructor(public name:string,
     public quote:string,
-    public submitDate:Date,
     public like:number,
-    public dislike:number,){
+    public dislike:number,
+    public submitDate:Date,){
       this.showDetails=false;
+      this.highlightQuotes=false;
 
     }
 }

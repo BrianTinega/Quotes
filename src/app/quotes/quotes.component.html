@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@1,700&display=swap" rel="stylesheet">
 <div class="container">
   <div class="jumbotron">
     <h1>Quotes</h1>
@@ -10,7 +11,7 @@
     <div class="col-md-6">
       
       <div *ngFor='let quote of quotes;let i=index' >
-        {{quote.quote}}<br>
+        <app-quotes-detail></app-quotes-detail>{{quote.quote}}<br>
         <button (click)="toggleDetails(i)">Toggle</button>
         <p  *ngIf='quote.showDetails'>Quote by:{{quote.name}}</p>
         <p  *ngIf='quote.showDetails'>Submitted on: {{quote.submitDate|date}} and {{quote.submitDate|dateCount}} days ago</p>

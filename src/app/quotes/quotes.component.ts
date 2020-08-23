@@ -9,7 +9,7 @@ import {Quotes} from '../quotes';
 })
 export class QuotesComponent implements OnInit {
   quotes:Quotes[]= [
-   new Quotes ('Brian','Carpe Diem',new Date (2020,8,20),0,0),
+   new Quotes ('Brian','Carpe Diem',0,0, new Date (7,20,2020)),
   ]
   
   toggleDetails(index){
@@ -25,6 +25,7 @@ export class QuotesComponent implements OnInit {
   upvote(index){
     this.quotes[index].like++
   }
+  
   downvote(index){
     this.quotes[index].dislike++
   }
