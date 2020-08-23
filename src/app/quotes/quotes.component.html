@@ -9,9 +9,9 @@
   <div class="container">
   <div class="row">
     <div class="col-md-6">
-      
+      <h2>Create Quote</h2>
       <div *ngFor='let quote of quotes;let i=index' >
-        <app-quotes-detail></app-quotes-detail>{{quote.quote}}<br>
+        <p>{{quote.quote}}</p><br>
         <button (click)="toggleDetails(i)">Toggle</button>
         <p  *ngIf='quote.showDetails'>Quote by:{{quote.name}}</p>
         <p  *ngIf='quote.showDetails'>Submitted on: {{quote.submitDate|date}} and {{quote.submitDate|dateCount}} days ago</p>
