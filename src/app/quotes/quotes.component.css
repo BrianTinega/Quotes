@@ -2,3 +2,6 @@ img {
   height: 1cm;
   width: 1cm;
 }
+.jumbotron {
+ background-color: navy;
+}
